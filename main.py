@@ -75,6 +75,8 @@ o['OZ'] = fuzz.trimf(o_range, [-2, 0, 2])
 o['OPL'] = fuzz.trimf(o_range, [0, 2, 4])
 o['OPH'] = fuzz.smf(o_range, 2, 4)
 
+o.defuzzify_method = 'mom'
+
 # Reference value setting visualization
 # i1.view(), i2.view(), o.view()
 
@@ -143,7 +145,7 @@ sim.compute()
 output = sim.output['O']
 
 # Printout results
-# print(output)
+print(output)
 
 # Draw O
 o.view(sim=sim)
